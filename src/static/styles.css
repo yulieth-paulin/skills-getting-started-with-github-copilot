@@ -90,18 +90,15 @@ section h3 {
 }
 
 .participants ul {
-  list-style: disc outside;
-  padding-left: 20px;
-  margin: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .participant-item {
-  margin: 8px 0;
-  padding-left: 8px;
-  color: #455066;
-  font-size: 0.95rem;
-  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 .participant-row {
   display: flex;
