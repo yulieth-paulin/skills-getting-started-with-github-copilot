@@ -149,3 +149,4 @@ const participantsHtml = details.participants && details.participants.length
   // Initialize app
   fetchActivities();
 });
+// trigger change
