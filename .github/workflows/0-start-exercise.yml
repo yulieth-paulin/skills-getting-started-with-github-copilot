@@ -36,6 +36,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           ref: main
+          fetch-depth: 0
 
       - name: Get response templates
         uses: actions/checkout@v6
@@ -43,6 +44,7 @@ jobs:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
           ref: v0.8.1
+          fetch-depth: 0
 
       - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1

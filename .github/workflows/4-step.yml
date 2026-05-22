@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Get response templates
         uses: actions/checkout@v6
@@ -36,6 +38,7 @@ jobs:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
           ref: v0.8.1
+          fetch-depth: 0
 
       - name: Find last comment
         id: find-last-comment
@@ -109,6 +112,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Get response templates
         uses: actions/checkout@v6
@@ -116,6 +121,7 @@ jobs:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
           ref: v0.8.1
+          fetch-depth: 0
 
       - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
