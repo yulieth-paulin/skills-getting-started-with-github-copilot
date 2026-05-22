@@ -21,19 +21,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
-        const participantsHtml = details.participants && details.participants.length
-          ? `<div class="participants"><strong>Participants</strong><ul>${details.participants
-              .map((email) => `<li class="participant-item"><span class="participant-email">${email}</span><button class="remove-participant" data-activity="${encodeURIComponent(name)}" data-email="${encodeURIComponent(email)}" aria-label="Remove participant">✕</button></li>`)
-              .join("")}</ul></div>`
-          : `<div class="participants no-participants"><em>No participants yet</em></div>`;
+        
+const participantsHtml = details.participants && details.participants.length
+  ? `<div class="participants">
+      <strong>Participants</strong>
+      <ul class="participants">
+        ${details.participants
+          .map((email) => `
+            <li class="participant-item">
+              ${email}
+              <button 
+                class="remove-participant"
+                data-activity="${encodeURIComponent(name)}"
+                data-email="${encodeURIComponent(email)}"
+                aria-label="Remove participant"
+              >
+                ❌
+              </button>
+            </li>
+          `)
+          .join("")}
+      </ul>
+    </div>`
+  : `<div class="participants no-participants">
+      <em>No participants yet</em>
+    </div>`;
 
-        activityCard.innerHTML = `
-          <h4>${name}</h4>
-          <p>${details.description}</p>
-          <p><strong>Schedule:</strong> ${details.schedule}</p>
-          <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
-          ${participantsHtml}
-        `;
+activityCard.innerHTML = `
+  <h4>${name}</h4>
+  <p>${details.description}</p>
+  <p><strong>Schedule:</strong> ${details.schedule}</p>
+  <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+  ${participantsHtml}
+`;
+
 
         activitiesList.appendChild(activityCard);
 
