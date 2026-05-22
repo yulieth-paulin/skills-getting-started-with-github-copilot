@@ -21,22 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
-        
-const participantsHtml = details.participants && details.participants.length
+        const participantsHtml = details.participants && details.participants.length
           ? `<div class="participants"><strong>Participants</strong><ul>${details.participants
               .map((email) => `
                 <li class="participant-item">
-                  <div class="participant-row">
-                    <span class="participant-email">${email}</span>
-                    <button
-                      class="remove-participant"
-                      data-activity="${encodeURIComponent(name)}"
-                      data-email="${encodeURIComponent(email)}"
-                      aria-label="Remove participant"
-                    >
-                      ✕
-                    </button>
-                  </div>
+                  ${email}
+                  <button
+                    class="remove-participant"
+                    data-activity="${encodeURIComponent(name)}"
+                    data-email="${encodeURIComponent(email)}"
+                    aria-label="Remove participant"
+                  >
+                    ✕
+                  </button>
                 </li>
               `)
               .join("")}</ul></div>`
