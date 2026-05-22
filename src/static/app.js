@@ -150,4 +150,4 @@ const participantsHtml = details.participants && details.participants.length
   fetchActivities();
 });
 
-// step3 final trigger
+// trigger step 3
