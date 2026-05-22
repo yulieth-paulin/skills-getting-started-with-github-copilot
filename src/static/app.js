@@ -30,13 +30,12 @@ const participantsHtml = details.participants && details.participants.length
           .map((email) => `
             <li class="participant-item">
               ${email}
-              <button 
+              <button
                 class="remove-participant"
                 data-activity="${encodeURIComponent(name)}"
                 data-email="${encodeURIComponent(email)}"
-                aria-label="Remove participant"
               >
-                ❌
+                X
               </button>
             </li>
           `)
