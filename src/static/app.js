@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
 const participantsHtml = details.participants && details.participants.length
-  ? `<div class="participants">
+  ? `<div>
       <strong>Participants</strong>
       <ul class="participants">
         ${details.participants
@@ -45,6 +45,7 @@ const participantsHtml = details.participants && details.participants.length
   : `<div class="participants no-participants">
       <em>No participants yet</em>
     </div>`;
+
 
 activityCard.innerHTML = `
   <h4>${name}</h4>
