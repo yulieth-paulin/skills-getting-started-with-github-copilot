@@ -90,25 +90,31 @@ section h3 {
 }
 
 .participants ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: disc outside;
+  padding-left: 20px;
   margin: 0;
 }
 
 .participant-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 8px;
+  margin: 8px 0;
+  padding-left: 8px;
   color: #455066;
   font-size: 0.95rem;
   border-radius: 6px;
+}
+
+.participant-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .participant-email {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1;
   margin-right: 8px;
 }
 

@@ -23,38 +23,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
 const participantsHtml = details.participants && details.participants.length
-  ? `<div>
-      <strong>Participants</strong>
-      <ul class="participants">
-        ${details.participants
-          .map((email) => `
-            <li class="participant-item">
-              ${email}
-              <button
-                class="remove-participant"
-                data-activity="${encodeURIComponent(name)}"
-                data-email="${encodeURIComponent(email)}"
-              >
-                X
-              </button>
-            </li>
-          `)
-          .join("")}
-      </ul>
-    </div>`
-  : `<div class="participants no-participants">
-      <em>No participants yet</em>
-    </div>`;
+          ? `<div class="participants"><strong>Participants</strong><ul>${details.participants
+              .map((email) => `
+                <li class="participant-item">
+                  <div class="participant-row">
+                    <span class="participant-email">${email}</span>
+                    <button
+                      class="remove-participant"
+                      data-activity="${encodeURIComponent(name)}"
+                      data-email="${encodeURIComponent(email)}"
+                      aria-label="Remove participant"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </li>
+              `)
+              .join("")}</ul></div>`
+          : `<div class="participants no-participants"><em>No participants yet</em></div>`;
 
-
-activityCard.innerHTML = `
-  <h4>${name}</h4>
-  <p>${details.description}</p>
-  <p><strong>Schedule:</strong> ${details.schedule}</p>
-  <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
-  ${participantsHtml}
-`;
-
+        activityCard.innerHTML = `
+          <h4>${name}</h4>
+          <p>${details.description}</p>
+          <p><strong>Schedule:</strong> ${details.schedule}</p>
+          <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          ${participantsHtml}
+        `;
 
         activitiesList.appendChild(activityCard);
 
